@@ -13,6 +13,12 @@ const mdSigns = {
 };
 
 const processMarkdownFile = (pathToMd, outputPath) => {
+    if (!pathToMd) {
+        console.error('Error: No path to the Markdown file provided.');
+        rl.close();
+        return;
+    }
+
     fs.readFile(pathToMd, 'utf8', (err, data) => {
         if (err) {
             console.error(`Error reading file: ${err}`);
@@ -89,10 +95,9 @@ const processMarkdownFile = (pathToMd, outputPath) => {
                 });
             } else {
                 console.log(htmlContent);
+                rl.close();
             }
         }
-
-        rl.close();
     });
 };
 
@@ -107,4 +112,3 @@ if (outIndex !== -1 && outIndex + 1 < args.length) {
 }
 
 processMarkdownFile(pathToMd, outputPath);
-
