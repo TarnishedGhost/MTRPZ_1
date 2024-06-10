@@ -14,3 +14,4 @@ node "path\main.js" "path\file.md"
 ```
 node path/main.js path/file.md
 ```
+Revert commit: https://github.com/TarnishedGhost/MTRPZ_1/commit/8f78b340939fa717ce0ce93ce338edc55843c53c
